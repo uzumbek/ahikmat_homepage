@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hikmat Abdoollayev — the journey</title>
+<meta name="description" content="Hikmat Abdoollayev — Senior Software Engineer. 12+ years building scalable systems, Java, AI/LLM products. Adyen, Meta, Booking.com.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f1e7; --bg-2:#efe7d8; --surface:#fffdf8;
+    --ink:#211a12; --ink-soft:#4a4034; --muted:#8a7d6a;
+    --line:#ddd0ba; --accent:#c1440e; --accent-soft:#e8a877;
+    --display:"Fraunces",Georgia,serif;
+    --sans:"Inter",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:#fff}
+
+  /* scroll progress */
+  .progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:100;transition:width .1s linear}
+
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+
+  /* nav */
+  header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;height:62px;gap:16px}
+  .logo{font-family:var(--display);font-weight:600;font-size:19px}
+  .logo i{color:var(--accent);font-style:normal}
+  .nav-right{margin-left:auto;display:flex;align-items:center;gap:14px}
+  .gh{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:13.5px;color:var(--ink-soft);border:1px solid var(--line);border-radius:999px;padding:7px 14px;background:var(--surface);transition:.2s}
+  .gh:hover{color:var(--ink);border-color:var(--ink)}
+  .gh svg{width:15px;height:15px;fill:currentColor}
+  .lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
+  .lang button{font-family:var(--sans);font-size:12.5px;font-weight:600;background:transparent;color:var(--muted);border:0;padding:7px 13px;cursor:pointer;transition:.2s}
+  .lang button:hover{color:var(--ink)}
+  .lang button.active{background:var(--ink);color:var(--bg)}
+  .mode{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
+  .mode button{font-family:var(--sans);font-size:12.5px;font-weight:600;background:transparent;color:var(--muted);border:0;padding:7px 13px;cursor:pointer;transition:.2s}
+  .mode button:hover{color:var(--ink)}
+  .mode button.active{background:var(--accent);color:#fff}
+  body.mode-simple .stop ul,
+  body.mode-simple .stop .chips{display:none}
+  body.mode-simple .stop--edu ul,
+  body.mode-simple .stop--edu .chips{display:block}
+
+  /* hero */
+  .hero{padding:90px 0 70px;text-align:left}
+  .hero .kicker{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:24px}
+  .hero h1{font-family:var(--display);font-weight:500;font-size:clamp(48px,9vw,104px);line-height:.98;letter-spacing:-2px;margin:0 0 28px}
+  .hero h1 em{font-style:italic;color:var(--accent)}
+  .hero .lede{font-size:20px;color:var(--ink-soft);max-width:38em;margin:0 0 30px}
+  /* journey route: a slim sticky bar with a horizontal track of 3 stops */
+  .routebar{position:sticky;top:62px;z-index:40;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);padding:12px 0 26px;transition:box-shadow .4s ease}
+  .routebar.stuck{box-shadow:0 14px 30px -22px rgba(0,0,0,.6)}
+  .track{position:relative;height:2px;background:var(--line);border-radius:2px}
+  .fill{position:absolute;left:0;top:0;height:100%;width:0;background:var(--accent);border-radius:2px}
+  .node{position:absolute;top:50%;width:13px;height:13px;border-radius:50%;background:var(--surface);border:2px solid var(--line);transform:translate(-50%,-50%);z-index:2;transition:background .35s,border-color .35s,box-shadow .35s}
+  .node.passed{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 16%,transparent)}
+  .dot{position:absolute;top:50%;left:0%;width:15px;height:15px;border-radius:50%;background:var(--accent);transform:translate(-50%,-50%);z-index:3;pointer-events:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent),0 2px 6px rgba(0,0,0,.2)}
+  .dot::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--accent);opacity:0;animation:ping 2.4s ease-out infinite}
+  @keyframes ping{0%{transform:scale(.55);opacity:.5}70%{transform:scale(1.5);opacity:0}100%{transform:scale(1.5);opacity:0}}
+  .labels{position:relative;height:22px;margin-top:12px;font-family:var(--display);font-size:15px;color:var(--muted)}
+  .lbl{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap;display:inline-flex;align-items:center;gap:6px;transition:color .4s ease}
+  .lbl .flag{width:16px;height:11px}
+  .lbl.passed{color:var(--ink)}
+  .hero .cta{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+  .btn{font-family:var(--sans);font-weight:600;font-size:15px;padding:13px 24px;border-radius:999px;border:1px solid var(--ink);color:var(--ink);cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:9px}
+  .btn svg{width:17px;height:17px;fill:currentColor}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn.primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px -14px var(--accent)}
+  .btn.ghost:hover{background:var(--ink);color:var(--bg)}
+
+  /* flags */
+  .flag{width:22px;height:15px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.12);display:inline-block;flex:none}
+
+  /* chapter */
+  .chapter{padding:60px 0;border-top:1px solid var(--line)}
+  .ch-grid{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start}
+  .ch-side{position:sticky;top:90px}
+  .ch-side .no{font-family:var(--display);font-size:15px;color:var(--accent);font-weight:600}
+  .ch-side .era{font-family:var(--display);font-weight:600;font-size:30px;letter-spacing:-.5px;line-height:1.1;margin-top:6px}
+  .ch-side .place{font-size:14px;color:var(--muted);margin-top:10px}
+  .ch-side .marker{width:14px;height:14px;border-radius:50%;background:var(--accent);margin-top:18px;box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 20%,transparent)}
+  .ch-body h2{font-family:var(--display);font-weight:500;font-size:clamp(30px,4.5vw,46px);letter-spacing:-1px;margin:0 0 18px;line-height:1.05}
+  .ch-body .intro{font-size:18px;color:var(--ink-soft);max-width:40em;margin:0 0 30px}
+
+  /* stop (a job) */
+  .stop{position:relative;padding:0 0 34px 34px}
+  .stop::before{content:"";position:absolute;left:5px;top:6px;bottom:-6px;width:2px;background:var(--line)}
+  .stop:last-child{padding-bottom:0}
+  .stop:last-child::before{bottom:6px}
+  .stop::after{content:"";position:absolute;left:0;top:5px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+  .stop .co{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.3px}
+  .stop .rl{color:var(--accent);font-weight:600;font-size:15px;margin-top:2px}
+  .stop .when{font-size:13.5px;color:var(--muted);margin-top:3px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .stop .team{font-size:13px;color:var(--muted);margin-top:2px}
+  .stop ul{margin:14px 0 0;padding:0;list-style:none}
+  .stop li{position:relative;padding-left:20px;margin-bottom:8px;color:var(--ink-soft);font-size:15.5px}
+  .stop li::before{content:"—";position:absolute;left:0;color:var(--accent)}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+  .chip{font-size:12.5px;font-weight:500;color:var(--ink-soft);border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--surface)}
+
+  /* highlight callout */
+  .callout{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:20px 22px;margin:8px 0 26px}
+  .callout .big{font-family:var(--display);font-weight:600;font-size:30px;color:var(--accent);line-height:1}
+  .callout .cap{font-size:14.5px;color:var(--ink-soft);margin-top:8px}
+
+  /* about section */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .panel h3{font-family:var(--display);font-weight:600;font-size:20px;margin:0 0 16px}
+  .edu-item{padding:12px 0;border-top:1px solid var(--line)}
+  .edu-item:first-child{border-top:0;padding-top:0}
+  .edu-item .per{font-size:12.5px;color:var(--accent);font-weight:600}
+  .edu-item h4{font-family:var(--display);font-weight:600;font-size:16px;margin:4px 0 2px}
+  .edu-item .sch{color:var(--ink-soft);font-size:14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .edu-item .maj{color:var(--muted);font-size:13px}
+  .lang-row{display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid var(--line);font-size:15px}
+  .lang-row:first-child{border-top:0;padding-top:0}
+  .lang-row .l{font-weight:600}
+  .lang-row .r{color:var(--accent)}
+
+  /* contact */
+  .contact{padding:70px 0 80px;text-align:center}
+  .contact .kicker{font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+  .contact h2{font-family:var(--display);font-weight:500;font-size:clamp(38px,7vw,72px);letter-spacing:-1.5px;margin:0 0 18px;line-height:1}
+  .contact h2 em{font-style:italic;color:var(--accent)}
+  .contact p{font-size:18px;color:var(--ink-soft);max-width:34em;margin:0 auto 30px}
+  .contact .rows{display:flex;justify-content:center;gap:14px 40px;flex-wrap:wrap;margin-bottom:30px}
+  .contact .row .k{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+  .contact .row .v{font-size:16px;font-weight:600;margin-top:3px;display:inline-flex;align-items:center;gap:8px}
+  .contact .row a.v:hover{color:var(--accent)}
+  .contact .row .v svg{width:16px;height:16px;fill:currentColor}
+
+  footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:760px){
+    /* nav: wrap to two rows so logo + 5 langs + 2 mode fit without horizontal scroll */
+    .nav{flex-wrap:wrap;height:auto;padding:12px 0;gap:10px}
+    .nav-right{margin-left:0;width:100%;justify-content:space-between;gap:10px}
+    .logo{font-size:18px}
+    .lang button{padding:6px 10px;font-size:12px}
+    .mode button{padding:6px 10px;font-size:12px}
+    /* keep the rightmost route label inside the viewport */
+    .routebar{padding-left:18px;padding-right:18px}
+    .ch-grid{grid-template-columns:1fr;gap:18px}
+    .ch-side{position:static;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+    .ch-side .marker{display:none}
+    .about-grid{grid-template-columns:1fr}
+    .gh{display:none}
+    .labels{font-size:12px}
+    .lbl .flag{width:13px;height:9px}
+    .dot{width:12px;height:12px}
+    .dot::after{inset:-5px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    .dot::after{animation:none}
+    *{transition-duration:.01ms!important}
+  }
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<header>
+  <div class="wrap nav">
+    <div class="logo">hikmat <i>·</i> abdoollayev</div>
+    <div class="nav-right">
+      <a class="gh" href="https://github.com/uzumbek" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        <span>github.com/uzumbek</span>
+      </a>
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="uz">UZ</button><button data-lang="ru">RU</button><button data-lang="en">EN</button><button data-lang="nl">NL</button><button data-lang="ko">KO</button>
+      </div>
+      <div class="mode" role="group" aria-label="Detail level">
+        <button data-mode="simple" id="modeSimple"></button><button data-mode="full" id="modeFull"></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- JOURNEY ROUTE (full-bleed so the frosted band spans the whole viewport;
+     the inner .wrap keeps the track/labels aligned to the 1000px content) -->
+<div class="routebar" id="routebar">
+  <div class="wrap">
+    <div class="track">
+      <div class="fill" id="fill"></div>
+      <span class="node" id="n0" style="left:0%"></span>
+      <span class="node" id="n1" style="left:50%"></span>
+      <span class="node" id="n2" style="left:100%"></span>
+      <div class="dot" id="dot"></div>
+    </div>
+    <div class="labels">
+      <span class="lbl" id="r0" style="left:0%"></span>
+      <span class="lbl" id="r1" style="left:50%"></span>
+      <span class="lbl" id="r2" style="left:100%"></span>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="kicker" id="kicker"></div>
+    <h1 id="heroTitle">Hikmat<br><em>Abdoollayev</em></h1>
+    <p class="lede" id="tagline"></p>
+    <div class="cta">
+      <a class="btn ghost" href="https://github.com/uzumbek" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        <span id="ctaGhTxt"></span>
+      </a>
+      <a class="btn ghost" href="#contact"><span id="ctaCtTxt"></span></a>
+    </div>
+  </section>
+
+  <!-- CHAPTER 1: Amsterdam (current era, on top) -->
+  <section class="chapter">
+    <div class="ch-grid">
+      <div class="ch-side reveal"><div class="no">01</div><div class="era" id="era2"></div><div class="place" id="place2"></div><div class="marker"></div></div>
+      <div class="ch-body">
+        <h2 id="ch2title"></h2>
+        <p class="intro" id="ch2intro"></p>
+        <div id="amsterdam"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 2: Seoul -->
+  <section class="chapter">
+    <div class="ch-grid">
+      <div class="ch-side reveal"><div class="no">02</div><div class="era" id="era1"></div><div class="place" id="place1"></div><div class="marker"></div></div>
+      <div class="ch-body">
+        <h2 id="ch1title"></h2>
+        <p class="intro" id="ch1intro"></p>
+        <div id="seoul"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 3: Tashkent (origin, at the bottom) -->
+  <section class="chapter">
+    <div class="ch-grid">
+      <div class="ch-side reveal"><div class="no">03</div><div class="era" id="era0"></div><div class="place" id="place0"></div><div class="marker"></div></div>
+      <div class="ch-body">
+        <h2 id="ch0title"></h2>
+        <p class="intro" id="ch0intro"></p>
+        <div id="tashkent"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="chapter">
+    <div class="ch-grid">
+      <div class="ch-side reveal"><div class="no">04</div><div class="era" id="era4"></div><div class="marker"></div></div>
+      <div class="ch-body">
+        <h2 id="aboutTitle"></h2>
+        <div class="about-grid">
+          <div class="panel reveal"><h3 id="eduTitle"></h3><div id="edu"></div></div>
+          <div class="panel reveal"><h3 id="langTitle"></h3><div id="langList"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="kicker" id="contactKicker"></div>
+    <h2 id="contactTitle"></h2>
+    <p id="contactText"></p>
+    <div class="rows">
+      <div class="row"><div class="k" data-k="email"></div><a class="v" id="cEmail" href="mailto:habdoollayev@gmail.com">habdoollayev@gmail.com</a></div>
+      <div class="row"><div class="k" data-k="phone"></div><span class="v" id="cPhone">+31 6 **** 0568</span></div>
+      <div class="row"><div class="k" data-k="location"></div><span class="v" id="cLocation"></span></div>
+      <div class="row"><div class="k" data-k="github"></div><a class="v" href="https://github.com/uzumbek" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>github.com/uzumbek</a></div>
+      <div class="row"><div class="k" data-k="telegram"></div><a class="v" href="https://t.me/performanceuz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.94 4.06 18.9 19.1c-.23 1.02-.83 1.27-1.68.79l-4.65-3.43-2.25 2.16c-.25.25-.46.46-.94.46l.33-4.73L18.3 6.6c.37-.33-.08-.51-.58-.18L7.14 13.1l-4.57-1.43c-1-.31-1.02-1 .21-1.48L20.65 2.7c.83-.31 1.55.2 1.29 1.36z"/></svg>@performanceuz</a></div>
+      <div class="row"><div class="k" data-k="blog"></div><a class="v" href="https://ahikmat.blogspot.kr/" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 1.5A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13zm2 3v2h8V4.5H4zm0 4v1.5h8V8.5H4zm0 3.5V13h5v-1.5H4z"/></svg>ahikmat.blogspot.kr</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© <span id="year"></span> Hikmat Abdoollayev</span>
+    <span id="footNote"></span>
+  </footer>
+</main>
+
+<script src="content.js"></script>
+<script>
+const C=window.CONTENT;
+let lang=localStorage.getItem("ha_lang")||"uz";
+let mode=localStorage.getItem("ha_mode")||"simple";
+const $=id=>document.getElementById(id);
+const header=document.querySelector("header");
+// the header is one row on desktop but wraps to two rows on mobile, so the
+// sticky route-bar's offset must track the real header height, not a constant.
+function syncRoutebarTop(){ if(header) document.getElementById("routebar").style.top=header.offsetHeight+"px"; }
+syncRoutebarTop();
+window.addEventListener("resize",syncRoutebarTop);
+window.addEventListener("load",syncRoutebarTop);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* ---- inline SVG flags (render identically on every OS, incl. Windows) ---- */
+const FLAGS = {
+  KR: `<svg class="flag" viewBox="0 0 60 40" aria-hidden="true"><rect width="60" height="40" fill="#fff"/>
+    <path d="M15 20 A15 15 0 0 1 45 20 A7.5 7.5 0 0 0 30 20 A7.5 7.5 0 0 1 15 20 Z" fill="#CD2E3A"/>
+    <path d="M45 20 A15 15 0 0 1 15 20 A7.5 7.5 0 0 0 30 20 A7.5 7.5 0 0 1 45 20 Z" fill="#0047A0"/>
+    <g fill="#000"><rect x="8" y="5" width="12" height="2.5"/><rect x="8" y="8.75" width="12" height="2.5"/><rect x="8" y="12.5" width="12" height="2.5"/>
+    <rect x="40" y="5" width="12" height="2.5"/><rect x="40" y="8.75" width="12" height="2.5"/><rect x="40" y="12.5" width="12" height="2.5"/>
+    <rect x="8" y="25" width="12" height="2.5"/><rect x="8" y="28.75" width="12" height="2.5"/><rect x="8" y="32.5" width="12" height="2.5"/>
+    <rect x="40" y="25" width="12" height="2.5"/><rect x="40" y="28.75" width="12" height="2.5"/><rect x="40" y="32.5" width="12" height="2.5"/></g></svg>`,
+  NL: `<svg class="flag" viewBox="0 0 60 40" aria-hidden="true"><rect width="60" height="40" fill="#21468B"/><rect width="60" height="26.67" fill="#fff"/><rect width="60" height="13.33" fill="#AE1C28"/></svg>`,
+  UZ: `<svg class="flag" viewBox="0 0 60 40" aria-hidden="true"><rect width="60" height="40" fill="#1EB53A"/><rect width="60" height="26.67" fill="#fff"/><rect width="60" height="13.33" fill="#0099B5"/>
+    <rect y="12.33" width="60" height="2" fill="#CE1126"/><rect y="25.67" width="60" height="2" fill="#CE1126"/>
+    <circle cx="12" cy="7.5" r="4" fill="#fff"/><circle cx="14" cy="6.5" r="3.4" fill="#0099B5"/>
+    <circle cx="19" cy="4.5" r="1" fill="#fff"/><circle cx="21.5" cy="7.5" r="1" fill="#fff"/><circle cx="19" cy="10.5" r="1" fill="#fff"/></svg>`
+};
+// match on the CITY so it works in all five languages (EN/UZ Latin, RU Cyrillic, NL, KO)
+function flagFor(place){
+  if(/seoul|seul|seoel|сеул|서울/i.test(place)) return FLAGS.KR;
+  if(/amsterdam|diemen|амстердам|дидем|암스테르담|디멘/i.test(place)) return FLAGS.NL;
+  if(/tashkent|toshkent|tasjkent|ташкент|타슈켄트/i.test(place)) return FLAGS.UZ;
+  return "";
+}
+
+// chapter framing copy (per language)
+const CH={
+  uz:{
+    r0:"Toshkent",r1:"Seul",r2:"Amsterdam",
+    modeSimple:"Qisqa",modeFull:"To'liq",
+    era0:"Toshkent era",place0:"2003 – 2007 · O'zbekiston",
+    ch0title:"Birinchi ta'lim",
+    ch0intro:"Birinchi ta'lim olingan shahar. Asos aynan shu yerda qo'yildi.",
+    tashNote:"Bakalavr ta'limi Toshkentda — hammasi shu shahardan boshlandi.",
+    era1:"Seul era",place1:"2009 – 2017 · Koreya",
+    ch1title:"Birinchi katta qadam",
+    ch1intro:"Android, backend, data — Seulda asos mustahkamlandi: murakkab tizimlar, og'ir yuk va haqiqiy muhandislik.",
+    era2:"Amsterdam era",place2:"2017 – hozir · Niderlandiya",
+    ch2title:"Yirik tizimlar, katta shirkatlar",
+    ch2intro:"Booking.com dan Meta gacha — milliardlab so'rovlar, yuqori trafik va mas'uliyatli backend ishlari.",
+    era3:"AI turn",place3:"2025 – hozir",
+    ch3title:"Java dan AI gacha",
+    ch3intro:"Eng so'nggi yo'nalish: LLM-asosidagi mahsulotlar, RAG va AI jarayonlarini ishlab chiqarishga olib chiqish.",
+    aiBig:"7.0 mlrd → 16 mln",aiCap:"haftalik GraphQL so'rovlari — Meta'da polling dan live obunaga o'tkazish",
+    era4:"About",
+    aboutTitle:"Kimman",
+    contactKicker:"Contact"
+  },
+  ru:{
+    r0:"Ташкент",r1:"Сеул",r2:"Амстердам",
+    modeSimple:"Кратко",modeFull:"Полный",
+    era0:"Эра Ташкента",place0:"2003 – 2007 · Узбекистан",
+    ch0title:"Первое образование",
+    ch0intro:"Город, где я получил первое образование. Основа была заложена именно здесь.",
+    tashNote:"Бакалавриат — в Ташкенте — всё началось в этом городе.",
+    era1:"Эра Сеула",place1:"2009 – 2017 · Корея",
+    ch1title:"Первый большой шаг",
+    ch1intro:"Android, бэкенд, данные — в Сеуле основа стала крепче: сложные системы, высокая нагрузка и настоящая инженерия.",
+    era2:"Эра Амстердама",place2:"2017 – наст. · Нидерланды",
+    ch2title:"Крупные системы, большие компании",
+    ch2intro:"От Booking.com до Meta — миллиарды запросов, высокий трафик и ответственная backend-работа.",
+    era3:"AI-поворот",place3:"2025 – наст.",
+    ch3title:"От Java к AI",
+    ch3intro:"Самое свежее направление: LLM-продукты, RAG и внедрение AI-конвейеров в продакшен.",
+    aiBig:"7.0 млрд → 16 млн",aiCap:"GraphQL-запросов в неделю — переход от поллинга к live-подписке в Meta",
+    era4:"Обо мне",
+    aboutTitle:"Кто я",
+    contactKicker:"Контакт"
+  },
+  en:{
+    r0:"Tashkent",r1:"Seoul",r2:"Amsterdam",
+    modeSimple:"Brief",modeFull:"Full",
+    era0:"The Tashkent era",place0:"2003 – 2007 · Uzbekistan",
+    ch0title:"First education",
+    ch0intro:"The city where I first studied. The foundation was laid right here.",
+    tashNote:"My bachelor's degree was in Tashkent — it all started in this city.",
+    era1:"The Seoul era",place1:"2009 – 2017 · Korea",
+    ch1title:"The first big leap",
+    ch1intro:"Android, backend, data — in Seoul the foundation got solid: complex systems, heavy load, and real engineering.",
+    era2:"The Amsterdam era",place2:"2017 – now · Netherlands",
+    ch2title:"Big systems, big companies",
+    ch2intro:"From Booking.com to Meta — billions of queries, high traffic, and responsible backend work.",
+    era3:"The AI turn",place3:"2025 – now",
+    ch3title:"From Java to AI",
+    ch3intro:"The latest chapter: LLM-based products, RAG, and shipping AI workflows to production.",
+    aiBig:"7.0B → 16M",aiCap:"weekly GraphQL queries — moving from polling to live subscription at Meta",
+    era4:"About",
+    aboutTitle:"Who I am",
+    contactKicker:"Contact"
+  },
+  nl:{
+    r0:"Tasjkent",r1:"Seoel",r2:"Amsterdam",
+    modeSimple:"Kort",modeFull:"Volledig",
+    era0:"De Tasjkent-tijd",place0:"2003 – 2007 · Oezbekistan",
+    ch0title:"Eerste opleiding",
+    ch0intro:"De stad waar ik mijn eerste opleiding volgde. De basis werd hier gelegd.",
+    tashNote:"Mijn bachelor was in Tasjkent — het begon allemaal in deze stad.",
+    era1:"De Seoel-tijd",place1:"2009 – 2017 · Korea",
+    ch1title:"De eerste grote sprong",
+    ch1intro:"Android, backend, data — in Seoel werd de basis steviger: complexe systemen, zware belasting en echte engineering.",
+    era2:"De Amsterdam-tijd",place2:"2017 – nu · Nederland",
+    ch2title:"Grote systemen, grote bedrijven",
+    ch2intro:"Van Booking.com tot Meta — miljarden queries, hoog verkeer en verantwoorde backend-afspraken.",
+    era3:"De AI-draai",place3:"2025 – nu",
+    ch3title:"Van Java naar AI",
+    ch3intro:"Het nieuwste hoofdstuk: LLM-gebaseerde producten, RAG en het live zetten van AI-workflows in productie.",
+    aiBig:"7,0 mrd → 16 mln",aiCap:"GraphQL-query's per week — van polling naar live-abonnement bij Meta",
+    era4:"Over mij",
+    aboutTitle:"Wie ik ben",
+    contactKicker:"Contact"
+  },
+  ko:{
+    r0:"타슈켄트",r1:"서울",r2:"암스테르담",
+    modeSimple:"간단히",modeFull:"자세히",
+    era0:"타슈켄트 시대",place0:"2003 – 2007 · 우즈베키스탄",
+    ch0title:"첫 학업",
+    ch0intro:"처음 학업을 시작한 도시. 토대가 바로 이곳에서 만들어졌습니다.",
+    tashNote:"타슈켄트에서 학사 학위를 받았습니다 — 모든 것은 이 도시에서 시작되었습니다.",
+    era1:"서울 시대",place1:"2009 – 2017 · 한국",
+    ch1title:"첫 번째 큰 도약",
+    ch1intro:"Android, 백엔드, 데이터 — 서울에서 토대가 단단해졌습니다: 복잡한 시스템, 높은 부하, 그리고 진정한 엔지니어링.",
+    era2:"암스테르담 시대",place2:"2017 – 현재 · 네덜란드",
+    ch2title:"거대한 시스템, 거대한 회사",
+    ch2intro:"Booking.com에서 Meta까지 — 수십억 건의 쿼리, 높은 트래픽, 그리고 책임감 있는 백엔드 작업.",
+    era3:"AI 전환",place3:"2025 – 현재",
+    ch3title:"Java에서 AI로",
+    ch3intro:"최신의 장: LLM 기반 제품, RAG, 그리고 프로덕션에 배포되는 AI 워크플로우.",
+    aiBig:"70억 → 1,600만",aiCap:"주간 GraphQL 쿼리 — Meta에서 폴링에서 라이브 구독으로 전환",
+    era4:"소개",
+    aboutTitle:"저는 누구인가",
+    contactKicker:"연락처"
+  }
+};
+
+function stopHtml(x){
+  const team=x.team?`<div class="team">${esc(x.team)}</div>`:"";
+  const flag=flagFor(x.loc);
+  return `<div class="stop reveal">
+    <div class="co">${esc(x.company)}</div>
+    <div class="rl">${esc(x.role)}</div>
+    <div class="when">${flag}<span>${esc(x.period)} · ${esc(x.loc)}</span></div>${team}
+    <ul>${x.bullets.map(b=>`<li>${esc(b)}</li>`).join("")}</ul>
+    <div class="chips">${x.stack.map(t=>`<span class="chip">${esc(t)}</span>`).join("")}</div>
+  </div>`;
+}
+
+function render(){
+  const c=C[lang], ch=CH[lang];
+  document.documentElement.lang=lang;
+  document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
+  // detail-level toggle labels + active state
+  $("modeSimple").textContent=ch.modeSimple;
+  $("modeFull").textContent=ch.modeFull;
+  document.querySelectorAll(".mode button").forEach(b=>b.classList.toggle("active",b.dataset.mode===mode));
+  document.body.classList.toggle("mode-simple",mode==="simple");
+  document.body.classList.toggle("mode-full",mode==="full");
+
+  $("kicker").textContent=c.eyebrow;
+  $("tagline").textContent=c.tagline;
+  $("ctaCtTxt").textContent=c.ctaContact;
+  $("ctaGhTxt").textContent="GitHub";
+  const lblHtml=(name)=>`${flagFor(name)}<span>${esc(name)}</span>`;
+  // Track order (left→right) matches chapter order (top→bottom): Amsterdam → Seoul → Tashkent
+  $("r0").innerHTML=lblHtml(ch.r2); // Amsterdam
+  $("r1").innerHTML=lblHtml(ch.r1); // Seoul
+  $("r2").innerHTML=lblHtml(ch.r0); // Tashkent
+
+  // Chapter 3: Tashkent (birth + bachelor's)
+  $("era0").textContent=ch.era0; $("place0").textContent=ch.place0;
+  $("ch0title").textContent=ch.ch0title; $("ch0intro").textContent=ch.ch0intro;
+  const tashEdu=c.education.filter(e=>/tashkent|toshkent|tasjkent|ташкент|타슈켄트/i.test(e.school));
+  $("tashkent").innerHTML=
+    `<div class="stop stop--edu reveal"><div class="co">${flagFor(ch.r0)}<span>${esc(ch.r0)}</span></div>`+
+    `<div class="rl">${esc(ch.tashNote)}</div>`+
+    `<ul>${tashEdu.map(e=>`<li><strong>${esc(e.deg)}</strong> — ${esc(e.school)} (${esc(e.period)})</li>`).join("")}</ul></div>`;
+
+  // split experience: Seoul (Korea) vs Amsterdam (Netherlands).
+  // Match on the CITY so it works in all five languages (Seoul / Seul / Seoel / Сеул / 서울).
+  const isSeoul=x=>/seoul|seul|seoel|сеул|서울/i.test(x.loc);
+  const seoul=c.experience.filter(isSeoul);
+  const amst=c.experience.filter(x=>!isSeoul(x));
+  $("era1").textContent=ch.era1; $("place1").textContent=ch.place1;
+  $("ch1title").textContent=ch.ch1title; $("ch1intro").textContent=ch.ch1intro;
+  // Seoul master's degree as an education stop (matches on "Kookmin", stable across all 5 languages).
+  // Appended LAST so the vertical timeline stays reverse-chronological: newest job on top,
+  // the oldest item (the 2007–2009 master's) at the bottom.
+  const seoulEdu=c.education.filter(e=>/kookmin/i.test(e.school));
+  const seoulEduHtml=seoulEdu.map(e=>`
+    <div class="stop stop--edu reveal">
+      <div class="co">${flagFor(e.school)}<span>${esc(e.school)}</span></div>
+      <div class="rl">${esc(e.deg)}</div>
+      <div class="when"><span>${esc(e.period)}</span></div>
+      <ul>${e.major?`<li>${esc(e.major)}</li>`:""}</ul>
+    </div>`).join("");
+  $("seoul").innerHTML=seoul.map(stopHtml).join("")+seoulEduHtml;
+
+  $("era2").textContent=ch.era2; $("place2").textContent=ch.place2;
+  $("ch2title").textContent=ch.ch2title; $("ch2intro").textContent=ch.ch2intro;
+  $("amsterdam").innerHTML=amst.map(stopHtml).join("");
+
+  $("era4").textContent=ch.era4;
+  $("aboutTitle").textContent=ch.aboutTitle;
+  $("eduTitle").textContent=c.eduTitle;
+  $("edu").innerHTML=c.education.map(e=>
+    `<div class="edu-item"><div class="per">${esc(e.period)}</div><h4>${esc(e.deg)}</h4><div class="sch">${flagFor(e.school)}<span>${esc(e.school)}</span></div><div class="maj">${esc(e.major)}</div></div>`).join("");
+  $("langTitle").textContent=c.langTitle;
+  $("langList").innerHTML=c.languages.map(l=>`<div class="lang-row"><span class="l">${esc(l)}</span><span class="r">${esc(c.langLevel)}</span></div>`).join("");
+
+  $("contactKicker").textContent=ch.contactKicker;
+  $("contactTitle").textContent=c.contactTitle;
+  $("contactText").textContent=c.contactText;
+  document.querySelectorAll(".contact .row .k").forEach(k=>{
+    const key=k.dataset.k;
+    k.textContent = key==="github" ? "GitHub" : c.contactKeys[key];
+  });
+  $("cLocation").innerHTML=flagFor(c.cLocation)+`<span>${esc(c.cLocation)}</span>`;
+  $("footNote").textContent=c.footNote;
+
+  observeReveals();
+}
+
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>{
+  lang=b.dataset.lang;localStorage.setItem("ha_lang",lang);render();
+}));
+document.querySelectorAll(".mode button").forEach(b=>b.addEventListener("click",()=>{
+  mode=b.dataset.mode;localStorage.setItem("ha_mode",mode);render();
+}));
+
+// scroll progress
+function onScroll(){
+  const h=document.documentElement;
+  const p=h.scrollTop/(h.scrollHeight-h.clientHeight);
+  $("progress").style.width=(p*100)+"%";
+  // mark the route bar as stuck once it has locked under the header
+  const bar=$("routebar");
+  if(bar) bar.classList.toggle("stuck",bar.getBoundingClientRect().top<=(header?header.offsetHeight:63)+1);
+  updateTraveler();
+}
+window.addEventListener("scroll",onScroll,{passive:true});
+
+// journey dot: glides along the track as you scroll; the dot sits exactly on a node
+// as you enter that city's chapter. Order is current→past (Amsterdam at the top/left,
+// Tashkent at the bottom/right), so it starts at Amsterdam and reaches Tashkent at the end.
+function updateTraveler(){
+  const dot=$("dot");
+  const fill=$("fill");
+  if(!dot) return;
+  // chs in DOM order (top→bottom): Amsterdam → Seoul → Tashkent.
+  // The dot starts at the left node (Amsterdam) and reaches the right node (Tashkent) at the bottom.
+  const chs=[document.getElementById("amsterdam").closest("section"),
+             document.getElementById("seoul").closest("section"),
+             document.getElementById("tashkent").closest("section")];
+  const tops=chs.map(s=>s.getBoundingClientRect().top+window.scrollY);
+  const st=window.scrollY;
+  const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+  let pct;
+  if(st<=tops[0])           pct=0;
+  else if(st<tops[1])       pct=50*clamp((st-tops[0])/(tops[1]-tops[0]),0,1);
+  else if(st<tops[2])       pct=50+50*clamp((st-tops[1])/(tops[2]-tops[1]),0,1);
+  else                       pct=100;
+  dot.style.left=pct+"%";
+  if(fill) fill.style.width=pct+"%";
+  const nodes=[$("n0"),$("n1"),$("n2")];
+  const lbls=[$("r0"),$("r1"),$("r2")];
+  nodes.forEach((n,i)=>n.classList.toggle("passed",pct>=(i*50)-0.5));
+  lbls.forEach((l,i)=>l.classList.toggle("passed",pct>=(i*50)-0.5));
+}
+window.addEventListener("resize",onScroll,{passive:true});
+
+let io;
+function observeReveals(){
+  if(!("IntersectionObserver" in window)){document.querySelectorAll(".reveal").forEach(e=>e.classList.add("in"));return;}
+  if(io)io.disconnect();
+  io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}})},{threshold:.12});
+  document.querySelectorAll(".reveal:not(.in)").forEach(el=>io.observe(el));
+}
+
+$("year").textContent=new Date().getFullYear();
+render();
+onScroll();
+window.addEventListener("load",onScroll);
+</script>
+</body>
+</html>
