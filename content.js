@@ -31,19 +31,19 @@ window.CONTENT = {
         ],stack:["Java","Xavfsizlik","Xabarlar"]},
       {company:"Adyen",role:"Software Engineer",period:"2026-apr — 2026",loc:"Amsterdam, Niderlandiya",team:"Online Payments-Authentication",
         bullets:[
-          "To'lov avtifikatsiya oqimining boshidan oxirigacha qayta ishlanishini to'liq egalladim — bu 3DS avtifikatsiya xatolarini 2% ga kamaytirishi kutilmoqda. Dastlabki ma'lumot tahlili, hajm baholash va rivojlantirishni olib bordim; backend, frontend va end-to-end testlarni yozdim.",
+          "3DS autentifikatsiyadagi nosozliklarni sezilarli darajada kamaytirishi kutilayotgan toʻlovni autentifikatsiya qilish oqimining oxirigacha yangilanishiga egalik qildi. Dastlabki ma'lumotlarni o'rganish, o'lchash va ishlab chiqish bilan shug'ullangan va backend, frontend va end-to-end testlarini yozgan.",
           "Jamoa ichida AI-asosli dasturlash amaliyotlarini joriy etdim — muhandislarga loyiha kontekstini boshqarish, kod bilim diagrammalarini tuzish, AI ni ichki vositalar (Git, Jira, loglar) bilan integratsiya qilish va maxsus AI skill orqali token ishlatishni optimallashtirishni o'rgatdim."
         ],stack:["Java","React","Factory Droid"]},
       {company:"Meta",role:"E5 Software Engineer",period:"2022-avg — 2025-dek",loc:"Amsterdam, Niderlandiya",team:"Care Engineering",
         bullets:[
-          "Jamoa texnik yo'l xaritasi strategiyasini boshqarib, sezilarli unumdorlik oshirishga erishdim — jumladan, regex marshrutlashining ma'lumotga asoslangan refaktoringi orqali tizimdagi kritik to'siqlarni bartaraf etdim.",
-          "GraphQL so'rovlarini yuqori chastotali polling mexanizmidan jonli obuna modeliga o'tkazib, tizim masshtablanishini optimallashtirdim — backend yukini haftasiga 7 milliarddan 16 million so'rovga qisqartirdim.",
-          "Texnik yordam jamoalari uchun AI yordamchini boshidan oxirigacha mustaqil yetkazib berdim — butun RAG qonotmasi, prompt muhandisligi va chat UI komponentlarini qurdim, shu bilan birga data muhandislari bilan asosiy data qonotmalari bo'yicha hamkorlik qildim."
+          "Jamoaning texnik yo‘l xaritasi strategiyasiga rahbarlik qildi, shu bilan birga unumdorlikni sezilarli darajada oshirdi, shu jumladan ma’lumotlarga asoslangan refaktoring orqali tizimdagi muhim to‘siqlarni bartaraf etdi.",
+          "GraphQL so'rovlarini yuqori chastotali so'rov mexanizmidan jonli obuna modeliga ko'chirish orqali tizimning optimallashtirilgan miqyosi, orqa tomon yukini kattalik darajasida kamaytirish.",
+          "Faqatgina ichki AI yordamchisini uchidan oxirigacha yetkazib berdi - butun RAG quvur liniyasini qurish, tezkor muhandislik va chat UI komponentlarini asosiy ma'lumotlar quvurlarida ma'lumotlar muhandislari bilan hamkorlik qilish."
         ],stack:["Hack","React","TypeScript","Python","Ichki ma'lumot bazalari","LLM (Llama)","GraphQL"]},
       {company:"Booking.com",role:"Senior Software Developer",period:"2017-avg — 2022-avg",loc:"Amsterdam, Niderlandiya",team:"Room Selection (Core Funnel)",
         bullets:[
           "Mehmonxona sahifasi va xonalar jadvali uchun backend mantiqini egalladim — asosiy xizmatlarni migratsiya qilib, refactoring qildim, endpointlarni optimallashtirish va tizimning uzoq muddatli barqarorligini ta'minladim.",
-          "Backend jamoa a'zolarini boshqarib va mentorlik qilib, ma'lumotlar bazasi API ustiga so'rov darajasidagi kesh qatlamini qurdim; bazaga qilingan chaqiruvlarga ulanib, usullarni qayta belgilash orqali so'rovlarni takrorlanishdan tozaladim — yuqori trafikdagi endpointlarda trafikni 50% ga qisqartirdim.",
+          "Ma'lumotlar bazasi API'si tepasida so'rov darajasidagi keshlash qatlamini yaratishda backend jamoasi a'zolariga rahbarlik qilish va maslahat berish; ma'lumotlar bazasi qo'ng'iroqlariga ulangan va so'rovlarni takrorlash usullarini bekor qilib, yuqori trafikli so'nggi nuqtalarda trafikni sezilarli darajada kamaytiradi.",
           "Booking.com kalendar ilovasi uchun narx ko'rsatish funksiyasini boshlab, backendni ishlab chiqdim va dizaynerlar hamda frontend muhandislari bilan ko'p yo'nalishda hamkorlik qildim."
         ],stack:["Perl","Java","A/B testing","SQL"]},
       {company:"CDNetworks",role:"Senior Software Engineer",period:"2015-fev — 2017-may",loc:"Seul, Koreya",team:"Cache Server Project",
@@ -121,19 +121,19 @@ window.CONTENT = {
         ],stack:["Java","Безопасность","Messaging"]},
       {company:"Adyen",role:"Software Engineer",period:"апр 2026 — 2026",loc:"Амстердам, Нидерланды",team:"Online Payments-Authentication",
         bullets:[
-          "Полностью вёл редизайн потока аутентификации платежей, который должен снизить сбои 3DS-аутентификации на 2%. Занимался начальным анализом данных, оценкой масштаба и разработкой; писал бэкенд, фронтенд и сквозные тесты.",
+          "Владеет комплексной модернизацией процесса аутентификации платежей, которая призвана значительно сократить количество сбоев аутентификации 3DS. Выполнял первоначальное исследование данных, определение размера и разработку, а также писал внутренние, внешние и сквозные тесты.",
           "Внедрил в команде AI-практики кодинга: научил инженеров управлять контекстом проекта, строить диаграммы знаний кода, интегрировать AI с внутренними инструментами (Git, Jira, логи) и оптимизировать использование токенов через кастомные AI-скиллы."
         ],stack:["Java","React","Factory Droid"]},
       {company:"Meta",role:"E5 Software Engineer",period:"авг 2022 — дек 2025",loc:"Амстердам, Нидерланды",team:"Care Engineering",
         bullets:[
-          "Вёл техническую стратегию дорожной карты команды, добиваясь значительного роста производительности, включая устранение критических узких мест через data-driven рефакторинг regex-маршрутизации.",
-          "Оптимизировал масштабируемость, переведя GraphQL-запросы от высокочастотного поллинга на live-подписку, что снизило нагрузку на бэкенд с 7 млрд до 16 млн запросов в неделю.",
-          "Самостоятельно реализовал AI-ассистента для команд технической поддержки от и до: построил весь RAG-конвейер, промпт-инжиниринг и компоненты чат-UI, сотрудничая с data-инженерами над базовыми пайплайнами данных."
+          "Руководил разработкой технической стратегии команды, одновременно добиваясь значительного улучшения производительности, включая устранение критических узких мест системы посредством рефакторинга на основе данных.",
+          "Оптимизирована масштабируемость системы за счет перевода запросов GraphQL из механизма высокочастотного опроса в модель активной подписки, что снижает нагрузку на серверную часть на порядки.",
+          "Полностью предоставил собственного помощника по искусственному интеллекту — построение всего конвейера RAG, быстрое проектирование и компоненты пользовательского интерфейса чата, одновременно сотрудничая с инженерами по обработке данных над базовыми конвейерами данных."
         ],stack:["Hack","React","TypeScript","Python","Внутренние БД","LLM (Llama)","GraphQL"]},
       {company:"Booking.com",role:"Senior Software Developer",period:"авг 2017 — авг 2022",loc:"Амстердам, Нидерланды",team:"Room Selection (Core Funnel)",
         bullets:[
           "Владел бэкенд-логикой страницы отеля и таблицы номеров, мигрируя и рефакторя ключевые сервисы для оптимизации эндпоинтов и обеспечения долгосрочной стабильности системы.",
-          "Вёл и менторил бэкенд-команду, строя слой кэширования на уровне запроса поверх API базы данных; подключился к вызовам БД и переопределил методы для дедупликации запросов, сократив трафик на 50% на высоконагруженных эндпоинтах.",
+          "Руководил и обучал членов серверной команды при создании уровня кэширования на уровне запросов поверх API базы данных; подключался к вызовам базы данных и переопределял методы для дедупликации запросов, что значительно снижало трафик на конечных точках с высоким трафиком.",
           "Инициировал и разработал функцию отображения цены для календарного приложения Booking.com, реализовав бэкенд и сотрудничая с дизайнерами и фронтенд-инженерами."
         ],stack:["Perl","Java","A/B-тестирование","SQL"]},
       {company:"CDNetworks",role:"Senior Software Engineer",period:"фев 2015 — май 2017",loc:"Сеул, Корея",team:"Cache Server Project",
@@ -211,19 +211,19 @@ window.CONTENT = {
         ],stack:["Java","Security","Messaging"]},
       {company:"Adyen",role:"Software Engineer",period:"Apr 2026 — 2026",loc:"Amsterdam, Netherlands",team:"Online Payments-Authentication",
         bullets:[
-          "Owned the end-to-end revamp of the payment authentication flow, projected to reduce 3DS authentication failures by 2%. Handled the initial data investigation, sizing, and development, and wrote the backend, frontend, and end-to-end tests.",
+          "Owned the end-to-end revamp of the payment authentication flow, projected to measurably reduce 3DS authentication failures. Handled the initial data investigation, sizing, and development, and wrote the backend, frontend, and end-to-end tests.",
           "Introduced AI-driven coding practices to the team — teaching engineers to manage project context, map code knowledge diagrams, integrate AI with internal tools (Git, Jira, logs), and optimize token usage via custom AI skills."
         ],stack:["Java","React","Factory Droid"]},
       {company:"Meta",role:"E5 Software Engineer",period:"Aug 2022 — Dec 2025",loc:"Amsterdam, Netherlands",team:"Care Engineering",
         bullets:[
-          "Led the team's technical roadmap strategy while driving significant performance improvements, including eliminating critical system bottlenecks through data-driven refactoring of regex route mapping.",
-          "Optimized system scalability by migrating GraphQL queries from a high-frequency polling mechanism to a live subscription model, reducing backend load from 7 billion to 16 million weekly queries.",
-          "Solely delivered an AI assistant for technical support teams from end to end — building the entire RAG pipeline, prompt engineering, and chat UI components while collaborating with data engineers on underlying data pipelines."
+          "Led the team's technical roadmap strategy while driving significant performance improvements, including eliminating critical system bottlenecks through data-driven refactoring.",
+          "Optimized system scalability by migrating GraphQL queries from a high-frequency polling mechanism to a live subscription model, reducing backend load by orders of magnitude.",
+          "Solely delivered an in-house AI assistant from end to end — building the entire RAG pipeline, prompt engineering, and chat UI components while collaborating with data engineers on underlying data pipelines."
         ],stack:["Hack","React","TypeScript","Python","Internal databases","LLM (Llama)","GraphQL"]},
       {company:"Booking.com",role:"Senior Software Developer",period:"Aug 2017 — Aug 2022",loc:"Amsterdam, Netherlands",team:"Room Selection (Core Funnel)",
         bullets:[
           "Owned the backend logic for the hotel page and rooms table, migrating and refactoring core services to optimize endpoints and ensure long-term system stability.",
-          "Led and mentored backend team members while building a request-level caching layer on top of the database API; hooked into database calls and overrode methods to deduplicate queries, cutting traffic by 50% on high-traffic endpoints.",
+          "Led and mentored backend team members while building a request-level caching layer on top of the database API; hooked into database calls and overrode methods to deduplicate queries, significantly reducing traffic on high-traffic endpoints.",
           "Initiated and developed a pricing indication feature for the Booking.com calendar app, implementing the backend and collaborating across disciplines with designers and frontend engineers."
         ],stack:["Perl","Java","A/B testing","SQL"]},
       {company:"CDNetworks",role:"Senior Software Engineer",period:"Feb 2015 — May 2017",loc:"Seoul, Korea",team:"Cache Server Project",
@@ -301,19 +301,19 @@ window.CONTENT = {
         ],stack:["Java","Beveiliging","Messaging"]},
       {company:"Adyen",role:"Software Engineer",period:"apr 2026 — 2026",loc:"Amsterdam, Nederland",team:"Online Payments-Authentication",
         bullets:[
-          "Bezette de end-to-end vernieuwing van de betaalauthenticatiestroom, bedoeld om 3DS-authenticatiefouten met 2% te verminderen. Verantwoordelijk voor het eerste datagedreven onderzoek, schatting en ontwikkeling; schreef backend, frontend en end-to-end tests.",
+          "Eigenaar van de end-to-end vernieuwing van de betalingsauthenticatiestroom, die naar verwachting het aantal 3DS-authenticatiefouten meetbaar zal verminderen. Verzorgde het initiële dataonderzoek, de omvang en de ontwikkeling ervan, en schreef de backend-, frontend- en end-to-end-tests.",
           "Introduceerde AI-gedreven codeerpraktijken in het team — engineers leerden projectcontext beheren, code-kennisdiagrammen tekenen, AI integreren met interne tools (Git, Jira, logs) en tokengebruik optimaliseren via aangepaste AI-skills."
         ],stack:["Java","React","Factory Droid"]},
       {company:"Meta",role:"E5 Software Engineer",period:"aug 2022 — dec 2025",loc:"Amsterdam, Nederland",team:"Care Engineering",
         bullets:[
-          "Leidde de technische roadmapstrategie van het team met significante prestatieverhoging, waaronder het oplossen van kritieke bottlenecks via data-gedreven refactoring van regex-routing.",
-          "Optimaliseerde schaalbaarheid door GraphQL-query's te verplaatsen van high-frequency polling naar een live-abonnementmodel, wat de backend-belasting verlaagde van 7 miljard naar 16 miljoen query's per week.",
-          "Leverde zelfstandig een AI-assistent voor technische supportteams van begin tot eind — bouwde de volledige RAG-pipeline, prompt engineering en chat-UI-componenten, in samenwerking met data-engineers aan de onderliggende datapipelines."
+          "Leidde de technische roadmapstrategie van het team en zorgde tegelijkertijd voor aanzienlijke prestatieverbeteringen, waaronder het elimineren van kritieke systeemknelpunten door middel van datagestuurde refactoring.",
+          "Geoptimaliseerde systeemschaalbaarheid door GraphQL-query's te migreren van een hoogfrequent pollingmechanisme naar een live abonnementsmodel, waardoor de backend-belasting met ordes van grootte wordt verminderd.",
+          "Solely leverde van begin tot eind een interne AI-assistent: bouwde de volledige RAG-pijplijn, snelle engineering en chat-UI-componenten, terwijl we samenwerkten met data-ingenieurs aan de onderliggende datapijplijnen."
         ],stack:["Hack","React","TypeScript","Python","Interne databases","LLM (Llama)","GraphQL"]},
       {company:"Booking.com",role:"Senior Software Developer",period:"aug 2017 — aug 2022",loc:"Amsterdam, Nederland",team:"Room Selection (Core Funnel)",
         bullets:[
           "Bezette de backend-logica van de hotelpagina en de kamertabel, met migratie en refactoring van kernservices om endpoints te optimaliseren en de langetermijnstabiliteit van het systeem te waarborgen.",
-          "Leidde en mentorde backend-teamleden en bouwde een cache-laag op requestniveau boven de database-API; haakte in op databasecalls en override-methoden om query's te dedupliceren, waardoor het verkeer met 50% daalde op endpoints met hoog verkeer.",
+          "Leden van het backend-team geleid en begeleid bij het bouwen van een cachinglaag op verzoekniveau bovenop de database-API; aangesloten op databaseaanroepen en overschreven methoden om zoekopdrachten te ontdubbelen, waardoor het verkeer op eindpunten met veel verkeer aanzienlijk werd verminderd.",
           "Initieerde en ontwikkelde een prijsindicatiefunctie voor de Booking.com-kalenderapp, met implementatie van de backend en samenwerking met designers en frontend-engineers."
         ],stack:["Perl","Java","A/B testing","SQL"]},
       {company:"CDNetworks",role:"Senior Software Engineer",period:"feb 2015 — mei 2017",loc:"Seoel, Korea",team:"Cache Server Project",
@@ -391,19 +391,19 @@ window.CONTENT = {
         ],stack:["Java","보안","Messaging"]},
       {company:"Adyen",role:"Software Engineer",period:"2026-04 — 2026",loc:"암스테르담, 네덜란드",team:"Online Payments-Authentication",
         bullets:[
-          "결제 인증 플로우의 엔드투엔드 재구성을 전담 — 3DS 인증 실패를 2% 감소시킬 예정. 초기 데이터 분석, 규모 추정, 개발을 담당했으며 백엔드, 프런트엔드, E2E 테스트를 작성.",
+          "결제 인증 흐름의 엔드투엔드 개편을 담당하여 3DS 인증 실패를 눈에 띄게 줄일 것으로 예상됩니다. 초기 데이터 조사, 크기 조정 및 개발을 처리하고 백엔드, 프런트엔드 및 엔드투엔드 테스트를 작성했습니다.",
           "팀에 AI 기반 코딩 실무를 도입 — 엔지니어들에게 프로젝트 컨텍스트 관리, 코드 지식 다이어그램 작성, 내부 도구(Git, Jira, 로그)와의 AI 통합, 커스텀 AI 스킬을 통한 토큰 사용량 최적화를 교육."
         ],stack:["Java","React","Factory Droid"]},
       {company:"Meta",role:"E5 Software Engineer",period:"2022-08 — 2025-12",loc:"암스테르담, 네덜란드",team:"Care Engineering",
         bullets:[
-          "팀의 기술 로드맵 전략을 주도하며 regex 라우팅의 데이터 기반 리팩토링으로 핵심 병목을 제거하는 등 상당한 성능 개선을 달성.",
-          "GraphQL 쿼리를 고주파 폴링에서 라이브 구독 모델로 전환해 확장성을 최적화 — 백엔드 부하를 주 70억에서 1,600만 쿼리로 감소.",
-          "기술 지원 팀용 AI 어시스턴트를 단독으로 엔드투엔드 제공 — 전체 RAG 파이프라인, 프롬프트 엔지니어링, 채팅 UI 컴포넌트를 구축하고 데이터 엔지니어와 협력."
+          "데이터 기반 리팩토링을 통해 중요한 시스템 병목 현상을 제거하는 등 상당한 성능 개선을 추진하는 동시에 팀의 기술 로드맵 전략을 주도했습니다.",
+          "GraphQL 쿼리를 고주파 폴링 메커니즘에서 라이브 구독 모델로 마이그레이션하여 시스템 확장성을 최적화하고 백엔드 로드를 몇 배나 줄였습니다.",
+          "기본 데이터 파이프라인에서 데이터 엔지니어와 협력하면서 전체 RAG 파이프라인, 프롬프트 엔지니어링 및 채팅 UI 구성 요소를 구축하는 등 처음부터 끝까지 사내 AI 도우미를 단독으로 제공했습니다."
         ],stack:["Hack","React","TypeScript","Python","내부 데이터베이스","LLM (Llama)","GraphQL"]},
       {company:"Booking.com",role:"Senior Software Developer",period:"2017-08 — 2022-08",loc:"암스테르담, 네덜란드",team:"Room Selection (Core Funnel)",
         bullets:[
           "호텔 페이지와 객실 테이블의 백엔드 로직을 소유 — 핵심 서비스의 마이그레이션과 리팩토링을 통해 엔드포인트를 최적화하고 시스템의 장기적 안정성을 보장.",
-          "백엔드 팀을 이끌고 멘토링하며, 데이터베이스 API 위에 요청 단위 캐싱 레이어를 구축 — DB 호출에 후킹하고 메서드를 오버라이드해 쿼리 중복을 제거, 고트래픽 엔드포인트의 트래픽을 50% 감소.",
+          "데이터베이스 API 위에 요청 수준 캐싱 계층을 구축하는 동안 백엔드 팀 구성원을 이끌고 멘토링했습니다. 데이터베이스 호출에 연결되고 쿼리 중복을 제거하는 메서드를 재정의하여 트래픽이 많은 엔드포인트의 트래픽을 크게 줄입니다.",
           "Booking.com 캘린더 앱의 가격 표시 기능을 기획·개발 — 백엔드를 구현하고 디자이너 및 프런트엔드 엔지니어와 다학제 협업."
         ],stack:["Perl","Java","A/B testing","SQL"]},
       {company:"CDNetworks",role:"Senior Software Engineer",period:"2015-02 — 2017-05",loc:"서울, 한국",team:"Cache Server Project",
