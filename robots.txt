@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uzumbek.github.io/ahikmat_homepage/sitemap.xml
